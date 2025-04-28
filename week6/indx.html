@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Elijah Fagbote">
+    <meta name="description" content="W6 Javascript Pay caluclator">
+    <title>Caluclator</title>
+</head>
+<body>
+    
+    <script>
+        prompt(`Hello employee. This is a automated program that caluclates your horuly wage over a 2 week period.`)
+
+        var taxes = .2
+        var name = prompt(`What is your name: `)
+        var hoursworked =Number(prompt(`How many hours did you work`))
+        var hourlywage =Number(prompt(`How much do you make an hour`))
+        var grosspay = hourlywage * hoursworked
+        var caluclator = grosspay * taxes
+        var netpay = grosspay - caluclator
+
+        prompt(`Hello ${name} your information is below:
+                Gross Pay: $${grosspay.toFixed(2)}
+                Uncle Sam's Share: $${caluclator.toFixed(2)}
+                Net Pay : $${netpay.toFixed(2)}
+        `)
+        
+    </script>
+</body>
+</html>

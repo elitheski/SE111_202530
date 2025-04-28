@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!--we shuld aim to have some sort of HTML in the file o load when launch in brower-->
+    <h1>Week 6 Into Demo | JavaScript</h1>
+
+    <!--In DOCUMENT JAVASCRIPT BELOW!-->
+    <!--In documnt: lives directly in the .html file (you saw this weith (CSS)-->\
+    <script>
+        //everything inside of this elemtn must be JAVASCRIPT
+        //documentation / single line commenig in JS
+        
+        //creatbg a variable --> declare name fist --> keyword "var"
+        var num1 = 10
+        //once a name is declared, then it can be defined
+
+        var num2 = 7
+
+        //cannot use num1 or num2 until they have been declared AND defined
+        //define: assign a value to
+
+        var sum = num1 +num2
+        console.log(sum) //console.log() is used for DEVELOPMENT debuggings, not for user!
+
+        //alert() allows for a pop-up in the browser page to display data
+        //alert() ---> Pythin's print(), for the USER
+        alert(`This sum is: ${sum}`)
+        //`` denotes a literal string --> work similar to the f "" in pything --hold var nams inside of ${VAR}
+
+        console.log(`hell there! the sum is ${sum}`)
+        //no physical display with console.log()to user, only for testing
+        //line 37 is not read until: the alaert is finished (user clicks OK)
+
+        /*this is a multiline comment in JavaScript
+            to access the console via dev tool:
+                *press F12 or right click --> inspect element
+                *choose CONOLD tab at top right
+                *Refreseh page :D
+        */
+        
+        //prompt() --> prompts the user fir a value; just like alert(), waits for Enter/Ok
+        //promtp() --> Python's inut()
+
+        prompt(`Enter a your name: `)
+
+        //store a value from prompt()
+        var name = prompt(`Enter a your name (again): `)
+        alert(`Hi there, ${name}`)
+        
+        //convert promt() resonses from sting to data to number data
+        var num = Number(promt(`Enter a number to square: `))
+
+        var square = num * num
+        console.log(`The square of ${num} is ${square.toFixed(2)}`)
+
+
+    </script>
+</body>
+</html>
