@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="KT">
+
+    <meta name="description" content="W6 Demo - Second Intro to JS">
+
+    <title>W6 | Demo #2</title>
+
+</head>
+
+<body>
+
+    <h1>Week 6 | JS Conditions & Functions Demo</h1>
+
+    <h3 id="special" onclick="ouch();">Conditions & Functions</h3>
+
+    <!--in document js-->
+    
+    <script>
+
+        //in here we write in js
+
+        //prompt user for yes or no response
+
+        var pref = prompt(`Welcome to Good Burger, home of the good burger, may I take your order? \nType "yes" or "no"`)
+
+        //functio below checks prompt/input value supplied by user and then returns a dining preference type 
+
+        //function definition below 
+        while (pref !=`yes` && pref !=`no`)//|| for or, && for and
+        {
+            pref =prompt(`Sorry, our system does not recongize that response. \nMay I take your order? \nPlease type "yes" or no"`
+
+            )
+        }
+        function checkDining(_pref) 
+
+        {
+
+            //conditions or conditional statements are held inside of ( ) in js
+
+            //=== is exactly equal in both value AND data type
+
+            if (_pref.toLowerCase() === `yes`)
+            {
+
+                //want to order
+
+                var dining = prompt(`Would you like to dine in or take out?\nType "in" or "out"`).toLocaleLowerCase()
+
+               if (dining === `in`)
+               {
+                    console.log(`User has chose to dine: ${dining}`)
+                    return dining //return value repalces call to function
+               }
+               else if (dining === `out`){
+                    console.log(`User has chose to dine: ${dining}`)
+                    return dining //return value repalces call to function
+
+               }
+               else //else NEVER has a conidition
+               {
+                    console.log(`User entered a BAD value`)
+                    return `bad` //bad value
+                }
+
+            }
+
+            else if (_pref.toLowerCase() === `no`)
+
+            {
+
+                //dont want to order
+
+                alert(`You have poor taste.`)
+
+                return 0
+
+            }
+
+            else 
+
+            {
+
+                //didnt follow directions / unexpected input value
+
+                alert(`UH OH! Invalid Entry!\nPlease reload and re-read directions :]`)
+
+                return `bad`
+
+            }
+        }
+
+        //once a function is defined, then it can be called!
+        //call checkDIning() and pass the var `pref` as an argument
+        var decisions = checkDining(pref)
+       
+        if (decisions == 0)
+        {
+            alert(`okay, have a nice day! Goodbye.`)
+        }
+        else if(decisions == `bad`)
+        {
+            alert(`Something went wrong :C \n\nPlease reload the page and try again.`)
+
+        }
+        else
+        {
+            alert(`Please tell me our order...`)
+        }
+
+
+
+        //special function teaser for upcoming week 7
+        //call functin is found in the main HTML 8D
+        function ouch(event)
+        {
+            console.log(`#special was clicked`)
+            alert(`OUCH! You CLIKED me!`) //code pauses here until user interacts w pop-up
+            console.log(`alert from ouch() has closed.`)
+
+            var element = document.querySelector(`#special`)
+            console.log(element)
+            
+            element.style.color = `red`
+            element.style.fontSize =`36px`
+            element.innerHTML = `Ouch! You clicked me!`
+            console.log(element)
+        }
+    </script>
+
+    
+
+</body>
+
+</html>
