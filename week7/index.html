@@ -88,7 +88,7 @@
 
     <script>
         //edit the below statement to select the #enter-button id from the HTML file
-        document.querySelector(`enter-button`).addEventListener(`click`, alertName)
+        document.querySelector(`#enter-button`).addEventListener(`click`, alertName)
         
         
 
@@ -107,17 +107,17 @@
             var full = fname + lname
              console.log(full)
 
-            var hours = Number(document.querySelector(`#hworked`).value)
-            var rate = Number(document.querySelector(`#hrate`).value)
+            var hours = Number(hours)
+            var rate = Number(rate)
 
             var gross = hours * rate
             var taxAmount= .2
             var taxes= gross * taxAmount
             var net= gross- taxes
             
-            consolde.log(gross.toFixed(2))
-            consolde.log(taxes.toFixed(2))
-            consolde.log(net.toFixed(2))
+            console.log(gross.toFixed(2))
+            console.log(taxes.toFixed(2))
+            console.log(net.toFixed(2))
 
             //convert both hours and rate to Number() data types
             
@@ -138,11 +138,11 @@
 
         
             //create a new var called 'info' and store the entire #info *HTML element* to it
-            var info = querySelector(`#info`)
+            var info = document.querySelector(`#info`)
 
             //create a new var called 'num' and store the entire #check *HTML element* to it
             
-            var num = querySelector(`#check`)
+            var num = document.querySelector(`#check`)
             //edit the innerHTML of the #info element (now the 'info' js var) to hold the value of 'finalMessage'
 
             info.innerHTML = finalMessage
@@ -150,12 +150,12 @@
 
             //edit the innerHTML of the #check element (now the 'check' js var) to hold a literal string with the following values: gross pay, tax amount, net pay. All three values should be rounded to the second decimal place.  Use <br> to break onto a new line for each value
 
-            num.innerHTML =`Gross Pay:${gross.toFixed(2)} <br> Tax Amount:${taxAmount.toFixed(2)} <br> Net Pay:${net.toExponential(2)}`
+            num.innerHTML =`Gross Pay:${gross.toFixed(2)} <br> Tax Amount:${taxes.toFixed(2)} <br> Net Pay:${net.toFixed(2)}`
 
             //add a 'click' event listener to the #submit HTML element (HINT: this is the first step in the <script> )
             //when the #submit button is clicked, the submitNow function should run
-            
-            document.querySelector(`submit`).addEventListener(`click`, alertName)
+
+            document.querySelector(`#submit`).addEventListener(`click`, submitNow)
         
         
             function submitNow(e)
