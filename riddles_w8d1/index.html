@@ -94,12 +94,12 @@
         <div id="header">
 
             <!--***ADD YOUR NAME to the <h1> welcome banner below-->
-            <h1>Welcome to <br> [_YOUR_NAME_HERE_]'s <br> Riddles Page!</h1>
+            <h1>Welcome to <br> Elijah's <br> Riddles Page!</h1>
 
             <!--***EDIT THE HREF attribute to include your GitHub repo link-->
 
             <!--+1 BONUS POINT: instead of adding the href in the HTML line below, instead add the link via your in-document javascript - make it the first line inside of the <script></script>-->
-            <a id="gitHub-link" href="" target="_blank">Back to [_YOUR_NAME_HERE_]'s GitHub Repo!</a>
+            <a id="gitHub-link" href="https://github.com/elitheski/SE111_202530" target="_blank">Back to [Elijah's]'s GitHub Repo!</a>
 
         </div><!--/ #header-->
 
@@ -152,9 +152,9 @@
             <!--***here is the reusable div, but empty for you to fill out with your first riddle-->
             <div id="q-3" class="question-div">
 
-                <h4>_RIDDLE_TITLE_</h4>
+                <h4>House Riddle</h4>
 
-                <p id="question3" class="question">_YOUR_FIRST_RIDDLE_HERE_</p>
+                <p id="question3" class="question">Black within and red without;four corners around about</p>
 
                 <h6 id="answer3" class="answer" onclick="reveal(3)"><span class="hover-color">Click Here for Answer!</span></h6>
 
@@ -163,7 +163,16 @@
 
             <!--QUESTION #4-->
             <!--***for the final question, you're on your own ;] DON'T WORRY! You already have 4 examples above you on how to set it up!-->
+            <div id="q-4" class="question-div">
 
+                <h4>Food Riddle</h4>
+
+                <p id="question4" class="question">What is the wealthiest nut?</p>
+
+                <h6 id="answer4" class="answer" onclick="reveal(4)"><span class="hover-color">Click Here for Answer!</span></h6>
+
+                <hr>
+            </div>
 
 
 
@@ -174,7 +183,7 @@
         <div id="footer">
 
             <!--***ADD YOUR NAME TO THE FOOTER-->
-            <p>&copy; [_YOUR_NAME_HERE_] | W8D1 | SE111 [202440]</p>
+            <p>&copy; [_Elijah_] | W8D1 | SE111 [202440]</p>
 
         </div><!--/ #footer-->
 
@@ -195,8 +204,8 @@
         var a2 = "A stamp"
 
         //***ADD YOUR OWN two riddle answers below
-        var a3
-        var a4
+        var a3 = "A chimney"
+        var a4 = "A cashew"
 
         /*
 
@@ -215,6 +224,12 @@
         //-----------------------------------------------------------------------------------------
 
         */
+        var answerChecks = new Array(a0, a1, a2, a3, a4)
+        
+        for (let i = 0; i < 5; i++){
+            var question = document.querySelector(`#question${i}`)
+            console.log(`QUESTION #${i}\n${question.innerHTML} \n i = ${i} -> ${answerChecks[i]}`)
+        }
 
 
         //the below function is run when an <h6> with an onclick attribute [onclick="reveal(#)"] is clicked
@@ -240,6 +255,8 @@
             if (num === 0) {answer = a0}
             if (num === 1) {answer = a1}
             if (num === 2) {answer = a2}
+            if (num === 3) {answer = a3}
+            if (num === 4) {answer = a4}
 
             
             //***ADD IN two more if statements to assign the a3 and a4 values!
